@@ -5,7 +5,7 @@ export default function InvoiceView(){const router=useRouter(); const [id,setId]
  async function printInvoice(){
   // Tunggu font dan logo selesai dimuat agar preview cetak tidak kosong/bergeser.
   try { if ("fonts" in document) await document.fonts.ready; } catch {}
-  const images=Array.from(document.querySelectorAll(".print-sheet img"));
+  const images=Array.from(document.querySelectorAll<HTMLImageElement>(".print-sheet img"));
   await Promise.all(images.map(img=>img.complete?Promise.resolve():new Promise<void>(resolve=>{img.addEventListener("load",()=>resolve(),{once:true});img.addEventListener("error",()=>resolve(),{once:true});setTimeout(resolve,2500);} )));
   requestAnimationFrame(()=>requestAnimationFrame(()=>window.print()));
  }
