@@ -50,3 +50,11 @@ Catatan: localStorage terikat pada browser/perangkat. Gunakan Ekspor Cadangan se
 - `npm run build` creates the static web bundle. For Android, install Android Studio + Android SDK, run `npm install`, `npm run android:add` once, then `npm run android:build` and `npm run cap:open`.
 - The current APK wrapper stores its localStorage inside the app's WebView on the device. This release does not yet use native SQLite; SQLite is the planned next storage adapter. Uninstalling/clearing app data can remove local records, so keep using Export Backup.
 - Printing: browser/Android print services may retain a manually selected paper size. Choose the matching A4/A5/80mm/58mm media size in the print dialog if the printer exposes it. The page-specific CSS requests matching sizes, but final physical output also depends on printer/driver support.
+
+
+## NotPad 2.2 — data nota & print improvement
+- Detail nota menampilkan label nomor HP pelanggan, alamat pelanggan, telepon bengkel, nomor nota, dan tanggal secara lebih jelas ketika datanya diisi.
+- Tombol Cetak menunggu font dan logo siap sebelum membuka dialog cetak perangkat.
+- Print A4/A5 memakai margin aman dan layout alur normal, tanpa ruang footer paksa yang sebelumnya bisa mendorong isi nota keluar halaman.
+- Baris tabel dijaga agar tidak terpotong antarhalaman.
+- Pada Android, dialog cetak bergantung pada dukungan browser/WebView dan layanan cetak perangkat. Pilih ukuran kertas yang sama dengan pilihan di NotPad dan gunakan skala “Fit to page” bila tersedia.
