@@ -1,0 +1,3 @@
+"use client";
+import Link from "next/link";import {Wrench,ArrowLeft,Settings2} from "lucide-react";
+export default function Topbar({back=false}:{back?:boolean}){return <header className="topbar no-print"><Link href="/" className="brand" style={{textDecoration:"none",color:"inherit"}}><span className="brand-mark"><Wrench size={22}/></span><span>NotPad</span><span className="badge hide-mobile">WORKSHOP TOOLS</span></Link><div className="top-actions">{back&&<Link href="/" className="btn btn-small"><ArrowLeft size={15}/> <span className="hide-mobile">Dashboard</span></Link>}<Link href="/settings" className="btn btn-small settings-link"><Settings2 size={16}/><span className="hide-mobile">Pengaturan</span></Link></div></header>}
